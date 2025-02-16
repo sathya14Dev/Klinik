@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jadwal Dokter-Edit</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="mt-5">
+      <h2 class="mb-5 d-flex justify-content-center">Edit Jadwal Dokter : {{ $dokter->name }}</h2>
+
+      <form action="#" method="POST">
+        <div class="col-md-6">
+          <label for="name" class="form-label">Nama :</label>
+          <input type="text" class="form-control" id="name" name="name" value="{{ $dokter->name }}" required>
+        </div>
+        <div class="col-md-6 mt-3">
+          <label for="poli" class="form-label">Poli :</label>
+          <input type="text" class="form-control" id="poli" name="poli" value="{{ $poli->name }}" required>
+        </div>
+        <div class="col-md-6 mt-3">
+          <label for="time" class="form-label">Dari Jam :</label>
+          <input type="time" class="form-control" id="start_time" name="start_time"
+              value="{{ $dokter->start_time }}" required>
+      </div>
+      <div class="col-md-6 mt-3">
+          <label for="time" class="form-label">Sampai Jam :</label>
+          <input type="time" class="form-control" id="end_time" name="end_time"
+              value="{{ $dokter->end_time }}" required>
+      </div>
+      <div class="col-md-6 mt-3">
+          <label for="name" class="form-label">Status :</label>
+          <select class="form-select" aria-label="Default select example">
+              <option selected>Pilih status</option>
+              <option value="{{ $dokter->status }}">Hadir</option>
+              <option value="{{ $dokter->status }}">Sakit</option>
+              <option value="{{ $dokter->status }}">Izin</option>
+          </select>
+      </div>
+      <div class="col-md-6 mt-3">
+          <label for="alasan" class="form-label">Alasan (jika izin) :</label>
+          <textarea class="form-control" name="alasan" rows="5">{{ $dokter->alasan }}</textarea>
+      </div>
+        <div class="col-md-6 mt-3 mb-5">
+          <button class="btn btn-primary form-control">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
